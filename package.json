@@ -16,6 +16,7 @@
     "bs-platform": "^3.0.0"
   },
   "dependencies": {
+    "Reprocessing": "schmavery/reprocessing",
     "bs-jest": "^0.3.2"
   },
   "jest": {
