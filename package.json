@@ -5,7 +5,8 @@
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
-    "test": "jest"
+    "test": "jest",
+    "webpack": "webpack -w --entry ./src/Presenter.bs.js --output public/build.js --mode development"
   },
   "keywords": [
     "BuckleScript"
@@ -17,7 +18,8 @@
   },
   "dependencies": {
     "Reprocessing": "schmavery/reprocessing",
-    "bs-jest": "^0.3.2"
+    "bs-jest": "^0.3.2",
+    "webpack": "^4.6.0"
   },
   "jest": {
     "testMatch": [
