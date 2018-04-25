@@ -1,0 +1,26 @@
+{
+  "name": "reason-game-of-life",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "test": "jest"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^3.0.0"
+  },
+  "dependencies": {
+    "bs-jest": "^0.3.2"
+  },
+  "jest": {
+    "testMatch": [
+      "**/*test.bs.js"
+    ]
+  }
+}
