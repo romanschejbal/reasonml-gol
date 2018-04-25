@@ -14,7 +14,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^3.0.0"
+    "bs-platform": "^3.0.0",
+    "webpack-cli": "^2.0.15"
   },
   "dependencies": {
     "Reprocessing": "schmavery/reprocessing",
