@@ -17,6 +17,8 @@ yarn build
 
 Run this
 ```
+yarn
+git reset --hard
 yarn start
 ```
 
