@@ -14,7 +14,7 @@ describe("Game of lyfe", () => {
     [|[|Dead, Dead|], [|Dead, Dead|]|]
     |> (grid => randomizeGrid(0.3, grid, ~seed=3))
     |> expect
-    |> toEqual([|[|Dead, Live|], [|Dead, Dead|]|])
+    |> toEqual([|[|Live, Dead|], [|Live, Live|]|])
   );
   test("countNeighbours", () =>
     [|[|Live, Dead|], [|Dead, Dead|], [|Dead, Live|]|]

@@ -34,14 +34,14 @@ describe("Game of lyfe", (function () {
                 ];
                 return Jest.Expect[/* toEqual */12](/* array */[
                             /* array */[
-                              /* Dead */0,
-                              /* Live */1
+                              /* Live */1,
+                              /* Dead */0
                             ],
                             /* array */[
-                              /* Dead */0,
-                              /* Dead */0
+                              /* Live */1,
+                              /* Live */1
                             ]
-                          ], Jest.Expect[/* expect */0](GameOfLife$ReasonGameOfLife.randomizeGrid(0.3, grid, /* Some */[3])));
+                          ], Jest.Expect[/* expect */0](GameOfLife$ReasonGameOfLife.randomizeGrid(/* Some */[3], 0.3, grid)));
               }));
         Jest.test("countNeighbours", (function () {
                 return Jest.Expect[/* toEqual */12](2, Jest.Expect[/* expect */0](GameOfLife$ReasonGameOfLife.countNeighbours(/* tuple */[

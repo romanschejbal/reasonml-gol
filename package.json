@@ -2,7 +2,7 @@
   "name": "reason-game-of-life",
   "version": "0.1.0",
   "scripts": {
-    "build": "bsb -make-world",
+    "build": "bsb -make-world && yarn run webpack",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
     "test": "jest",

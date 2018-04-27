@@ -10,28 +10,25 @@ let gridMap = (fn, grid) =>
     grid
   );
 
-let randomizeGrid = (chance, grid, ~seed=?) => {
+let randomizeGrid = (~seed=?, chance, grid) => {
   switch seed {
   | None => ()
   | Some(seed) => Random.init(seed)
   };
   gridMap(
-    ((yi, xi), cell) => {
+    (_, _) => {
       let n = Random.float(1.);
-      n >= chance ? Live : Dead;
+      n >= chance ? Dead : Live;
     },
     grid
   );
 };
 
 let getCell = ((yi, xi), grid) =>
-  if (yi < 0
-      || yi >= Array.length(grid)
-      || xi < 0
-      || xi >= Array.length(grid[0])) {
-    Dead;
-  } else {
-    grid[yi][xi];
+  switch (yi, xi) {
+  | _ when yi < 0 || yi >= Array.length(grid) => Dead
+  | _ when xi < 0 || xi >= Array.length(grid[0]) => Dead
+  | _ => grid[yi][xi]
   };
 
 let countNeighbours = ((yi, xi), grid) =>
@@ -64,9 +61,10 @@ let iterate = grid =>
       let neighboursCount = countNeighbours(coords, grid);
       switch neighboursCount {
       | 0
-      | 1
-      | 2 => Dead
-      | _ => cell
+      | 1 => Dead
+      | 2 => cell
+      | 3 => Live
+      | _ => Dead
       };
     },
     grid

@@ -22,7 +22,7 @@ function gridMap(fn, grid) {
               }), grid);
 }
 
-function randomizeGrid(chance, grid, seed) {
+function randomizeGrid(seed, chance, grid) {
   if (seed) {
     Random.init(seed[0]);
   }
@@ -30,9 +30,9 @@ function randomizeGrid(chance, grid, seed) {
                 var n = Random.$$float(1);
                 var match = n >= chance;
                 if (match) {
-                  return /* Live */1;
-                } else {
                   return /* Dead */0;
+                } else {
+                  return /* Live */1;
                 }
               }), grid);
 }
@@ -116,10 +116,14 @@ function countNeighbours(param, grid) {
 function iterate(grid) {
   return gridMap((function (coords, cell) {
                 var neighboursCount = countNeighbours(coords, grid);
-                if (neighboursCount > 2 || neighboursCount < 0) {
-                  return cell;
+                if (neighboursCount !== 2) {
+                  if (neighboursCount !== 3) {
+                    return /* Dead */0;
+                  } else {
+                    return /* Live */1;
+                  }
                 } else {
-                  return /* Dead */0;
+                  return cell;
                 }
               }), grid);
 }
