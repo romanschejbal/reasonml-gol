@@ -1,18 +1,33 @@
 # Game Of Life in ReasonML
 
-Hello! This project allows you to quickly get started with Reason and BuckleScript. If you wanted a more sophisticated version, try the `react` template (`bsb -theme react -init .`).
+Hello! This project was made at a ReasonML Hackathon hosted at BlueBerry offices in Prague. Feel free to open pull requests with improvements or cleaner / more idiomatic Reason code.
 
-# Build
-```
-npm run build
-```
+![alt](public/screenshot.png)
 
-# Build + Watch
+# How to build
+I used Reprocessing for the visual side of things but immediately encoutered a problem where the project is slightly behind the current bsb platform scripts. So I commited the changes I had to make within those projects (inside node_modules) and that's why you'll need to put them back after running yarn install. Here are the steps that should do the trick
 
 ```
-npm run start
+yarn
+git reset --hard
+yarn build
 ```
 
+# Build + Watch (dev)
 
-# Editor
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically
+Run this
+```
+yarn start
+```
+
+And this in a separate terminal in order to get the bundled javascript
+```
+yarn webpack
+```
+
+And just open `public/index.html` in your browser
+
+# Tests
+```
+yarn test
+```
