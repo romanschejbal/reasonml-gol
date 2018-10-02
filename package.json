@@ -14,11 +14,11 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^3.0.0",
+    "bsb-native": "4.0.6",
     "webpack-cli": "^2.0.15"
   },
   "dependencies": {
-    "Reprocessing": "schmavery/reprocessing",
+    "reprocessing": "0.2.0",
     "bs-jest": "^0.3.2",
     "webpack": "^4.6.0"
   },
